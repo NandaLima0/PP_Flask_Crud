@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Cadastro</title>
+    <style>
+        body {
+            background-color: navajowhite;
+        }
+        h1 {
+            background-color: burlywood;
+            text-align: center;
+        }
+        input[type="submit"] {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>MEU CADASTRO</h1>
+    <h2>Excluir conta</h2>
+    <form action="/deletar" method="POST">
+        <input type="text" name="nome" placeholder="Digite o nome de usuario" required>
+        <br><br>
+        <input type="email" name="email" placeholder="Digite seu email" required>
+        <br><br>
+        <input type="submit" name="enviar" value="Excluir">
+    </form>
+
+    <h2>Mensaguem:</h2>
+    <ul>
+        {% if mensagem %}
+        <div class="mensagem">{{ mensagem }}</div>
+        {% endif %}
+    </ul>
+    <hr>
+
+    <div>
+        <a href="/"><button type="button">Cadastrar</button></a>
+        <a href="/alterar"><button type="button">Alterar</button></a>
+    </div>
+</body>
+</html>
